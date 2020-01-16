@@ -1,0 +1,20 @@
+<launch>
+
+<!--Load parameter year in namespace masteruvic -->
+
+  <rosparam command="load" file="$(find exerciseINT21)/config/params.yaml" ns="masteruvic" />
+
+<!--rviz node -->
+	<node
+			pkg="rviz"
+			type="rviz"
+			name="rviz"
+		>
+	</node>
+
+<!--Include usb_cam-test.launch from the usb_cam package-->
+
+<include file="$(find usb_cam)/launch/usb_cam-test.launch">
+  </include>
+
+	</launch>
